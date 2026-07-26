@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="100%" height="100%" preserveAspectRatio="none">
+  <!-- Small Acacia Tree on the Left -->
+  <g fill="#0e040f" transform="translate(180, 240) scale(0.65)">
+    <!-- Trunk and Main Branches -->
+    <path d="M110,320 Q105,250 95,210 Q90,190 75,175 Q60,160 40,150 L45,142 Q70,155 85,170 Q95,140 70,110 L78,105 Q105,135 105,175 Q115,185 130,175 Q155,160 180,140 L185,147 Q160,168 135,182 Q125,190 125,210 Q120,250 115,320 Z" />
+    <!-- Umbrella Canopy (Foliage clouds) -->
+    <ellipse cx="40" cy="145" rx="35" ry="12" />
+    <ellipse cx="80" cy="105" rx="45" ry="14" />
+    <ellipse cx="140" cy="170" rx="30" ry="10" />
+    <ellipse cx="185" cy="140" rx="40" ry="12" />
+    <ellipse cx="115" cy="120" rx="60" ry="15" />
+  </g>
+
+  <!-- Large Acacia Tree on the Right -->
+  <g fill="#0a020b" transform="translate(1000, 160)">
+    <!-- Trunk and Main Branches -->
+    <path d="M220,380 Q210,280 190,230 Q180,200 150,180 Q120,160 80,150 L85,140 Q130,152 165,172 Q180,130 140,90 L152,82 Q195,125 195,180 Q210,195 240,180 Q280,160 330,130 L338,140 Q290,172 250,192 Q235,200 235,230 Q230,280 225,380 Z" />
+    <!-- Umbrella Canopy (Foliage clouds) -->
+    <ellipse cx="80" cy="145" rx="55" ry="15" />
+    <ellipse cx="145" cy="85" rx="70" ry="18" />
+    <ellipse cx="240" cy="180" rx="50" ry="14" />
+    <ellipse cx="330" cy="130" rx="65" ry="16" />
+    <ellipse cx="195" cy="105" rx="90" ry="20" />
+  </g>
+</svg>

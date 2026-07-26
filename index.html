@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover the Wild. Protect the Planet. Experience the majesty of Earth's wildlife through immersive cinematic parallax, in-depth creature catalogs, and habitat exploration.">
+  <meta name="keywords" content="wildlife, nature, animals, conservation, parallax, safari, endangered species, rainforest, ocean, arctic, wild earth">
+  <title>WILD EARTH | Immersive Wildlife Documentary Experience</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" aria-live="polite"></div>
+
+  <!-- Navigation Bar -->
+  <header id="header">
+    <div class="nav-container">
+      <a href="#home" class="logo" aria-label="Wild Earth home logo">
+        <i class="fa-solid fa-compass"></i> WILD<span>EARTH</span>
+      </a>
+      <nav class="nav-links" aria-label="Main Navigation Menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#animals" class="nav-link">Animals</a>
+        <a href="#habitats" class="nav-link">Habitats</a>
+        <a href="#endangered" class="nav-link">Endangered</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#footer" class="nav-link">About</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-toggle-btn" id="searchToggle" aria-label="Toggle Search bar" aria-expanded="false">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="btn-explore-nav" id="exploreWildlifeBtn">Explore Wildlife</button>
+        <button class="hamburger-menu" id="hamburger" aria-label="Open Navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Inline Search Bar Drawer -->
+    <div class="nav-search-bar" id="navSearchBar">
+      <div class="search-input-wrapper">
+        <input type="text" id="navSearchInput" placeholder="Search animal names, habitats, or diet (e.g. Lion, Ocean, Carnivore)..." aria-label="Search site content">
+        <button id="navSearchBtn" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation Menu">
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#animals" class="mobile-nav-link">Animals</a>
+    <a href="#habitats" class="mobile-nav-link">Habitats</a>
+    <a href="#endangered" class="mobile-nav-link">Endangered</a>
+    <a href="#gallery" class="mobile-nav-link">Gallery</a>
+    <a href="#footer" class="mobile-nav-link">About</a>
+    <div class="mobile-nav-actions">
+      <a href="#animals" class="mobile-explore-btn">Explore Wildlife</a>
+    </div>
+  </div>
+
+  <!-- Cinematic Hero Section -->
+  <section id="home" class="cinematic-hero" aria-label="Hero Introduction">
+    <!-- Parallax Layers -->
+    <!-- Layer 1: Sky sunset gradient background -->
+    <div class="hero-layer layer-sky" data-speed="0.05">
+      <div class="sun-glow"></div>
+    </div>
+    
+    <!-- Layer 2: Clouds -->
+    <div class="hero-layer layer-clouds" data-speed="0.08"></div>
+    
+    <!-- Layer 3: Distant Mountains -->
+    <div class="hero-layer layer-mountains" data-speed="0.12"></div>
+    
+    <!-- Layer 4: Savanna Landscape -->
+    <div class="hero-layer layer-landscape" data-speed="0.18"></div>
+    
+    <!-- Layer 5: Acacia Trees -->
+    <div class="hero-layer layer-trees" data-speed="0.25"></div>
+    
+    <!-- Layer 6: Wildlife Silhouette (Lion standing) -->
+    <div class="hero-layer layer-wildlife" data-speed="0.32"></div>
+    
+    <!-- Layer 7: Foreground Grass -->
+    <div class="hero-layer layer-foreground" data-speed="0.45"></div>
+    
+    <!-- Layer 8: Atmospheric Fog & Ambient Particles -->
+    <div class="hero-layer layer-particles">
+      <!-- 8 hardcoded particles to float around -->
+      <div class="dust-particle" style="width: 6px; height: 6px; left: 15%; animation-delay: 0s; animation-duration: 10s;"></div>
+      <div class="dust-particle" style="width: 4px; height: 4px; left: 35%; animation-delay: 2s; animation-duration: 15s;"></div>
+      <div class="dust-particle" style="width: 8px; height: 8px; left: 55%; animation-delay: 4s; animation-duration: 12s;"></div>
+      <div class="dust-particle" style="width: 5px; height: 5px; left: 75%; animation-delay: 1s; animation-duration: 18s;"></div>
+      <div class="dust-particle" style="width: 6px; height: 6px; left: 25%; animation-delay: 6s; animation-duration: 14s;"></div>
+      <div class="dust-particle" style="width: 4px; height: 4px; left: 85%; animation-delay: 3s; animation-duration: 11s;"></div>
+      <div class="dust-particle" style="width: 7px; height: 7px; left: 45%; animation-delay: 5s; animation-duration: 16s;"></div>
+      <div class="dust-particle" style="width: 5px; height: 5px; left: 65%; animation-delay: 7s; animation-duration: 13s;"></div>
+    </div>
+    
+    <!-- Haze Transition Fog Overlay -->
+    <div class="hero-fog-overlay"></div>
+    
+    <!-- Center Content -->
+    <div class="hero-container">
+      <div class="hero-cinematic-content" data-speed="0.08">
+        <h1 class="hero-title animate-blur-up">THE WILD IS CALLING</h1>
+        <p class="hero-subtitle animate-up delay-1">Enter a world where every creature has a story, every landscape holds a secret, and every moment reminds us why the wild must be protected.</p>
+        <div class="hero-buttons animate-up delay-2">
+          <a href="#animals" class="btn btn-primary">EXPLORE ANIMALS <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#habitats" class="btn btn-glass">DISCOVER HABITATS <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Down Indicator -->
+    <div class="hero-scroll-indicator">
+      <span class="scroll-text">SCROLL TO EXPLORE</span>
+      <div class="scroll-line" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Animal Explorer Section -->
+  <section id="animals" class="explorer-section section-padding">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-tagline">Meet the Wild</span>
+        <h2 class="section-title">Discover Remarkable Creatures</h2>
+        <p class="section-subtitle">Read educational summaries, scientific classifications, and understand the stories of species sharing our planet.</p>
+      </div>
+
+      <!-- Controls: Search & Categories Filter -->
+      <div class="explorer-controls reveal delay-1">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="animalSearchInput" placeholder="Filter by animal name, scientific name, habitat, or diet..." aria-label="Search animal catalog">
+        </div>
+        <div class="filter-tabs" role="tablist" aria-label="Animal categories filter">
+          <button class="filter-tab active" role="tab" aria-selected="true" data-filter="all">All Species</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-filter="mammals">Mammals</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-filter="marine">Marine Life</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-filter="predators">Predators</button>
+          <button class="filter-tab" role="tab" aria-selected="false" data-filter="endangered">Endangered</button>
+        </div>
+      </div>
+
+      <!-- Animals Catalog Cards Grid -->
+      <div class="animal-grid" id="animalGrid">
+        <!-- Rendered Dynamically via script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Habitat Section 1: African Savanna -->
+  <section class="habitat-parallax-section" id="habitats" aria-label="Ecosystem: African Savanna">
+    <div class="habitat-bg" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="habitat-overlay"></div>
+    <div class="container">
+      <div class="habitat-content-box glass-panel reveal">
+        <span class="section-tagline">Ecosystem Section 1</span>
+        <h2>THE KINGDOM OF THE SAVANNA</h2>
+        <p>Across the endless grasslands of Africa, life moves to the rhythm of the seasons. Home to the world's most iconic predators and giant grazers, it is a landscape of struggle, cooperation, and immense beauty under golden horizons.</p>
+        <a href="#animals" class="btn btn-primary">View Savanna Wildlife <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Habitat Section 2: Rainforest -->
+  <section class="habitat-parallax-section" aria-label="Ecosystem: Tropical Rainforest">
+    <div class="habitat-bg" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="light-rays"></div>
+    <div class="habitat-overlay"></div>
+    <div class="container">
+      <div class="habitat-content-box glass-panel reveal">
+        <span class="section-tagline">Ecosystem Section 2</span>
+        <h2>INTO THE DEEP GREEN</h2>
+        <p>Beneath the dense canopy lies one of Earth's richest ecosystems. Tropical rainforests cover less than 7% of Earth's surface but house more than half of its plant and animal species, blanketed in humidity, shadows, and light-rays.</p>
+        <a href="#animals" class="btn btn-primary">Explore Canopy Life <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Habitat Section 3: Arctic -->
+  <section class="habitat-parallax-section" aria-label="Ecosystem: Arctic Tundra">
+    <div class="habitat-bg" style="background-image: url('https://images.unsplash.com/photo-1517783999520-f068d7431a60?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="habitat-overlay"></div>
+    <div class="container">
+      <div class="habitat-content-box glass-panel reveal">
+        <span class="section-tagline">Ecosystem Section 3</span>
+        <h2>LIFE AT THE EDGE OF THE WORLD</h2>
+        <p>In the frozen north, life survives in one of Earth's most extreme environments. From majestic polar bears patrolling drift ice to massive whale pods navigating freezing channels, the Arctic is a delicate realm of ice and resilience.</p>
+        <a href="#animals" class="btn btn-primary">See Ice Survivors <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem Habitat Section 4: Ocean -->
+  <section class="habitat-parallax-section" aria-label="Ecosystem: The Open Ocean">
+    <div class="habitat-bg" style="background-image: url('https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="underwater-particles">
+      <!-- Bubbles floating upwards in background -->
+      <div class="bubble" style="width: 10px; height: 10px; left: 10%; animation-delay: 0s; animation-duration: 8s;"></div>
+      <div class="bubble" style="width: 14px; height: 14px; left: 30%; animation-delay: 2s; animation-duration: 12s;"></div>
+      <div class="bubble" style="width: 8px; height: 8px; left: 50%; animation-delay: 1s; animation-duration: 9s;"></div>
+      <div class="bubble" style="width: 12px; height: 12px; left: 70%; animation-delay: 3s; animation-duration: 11s;"></div>
+      <div class="bubble" style="width: 10px; height: 10px; left: 90%; animation-delay: 0.5s; animation-duration: 10s;"></div>
+    </div>
+    <div class="habitat-overlay"></div>
+    <div class="container">
+      <div class="habitat-content-box glass-panel reveal">
+        <span class="section-tagline">Ecosystem Section 4</span>
+        <h2>BENEATH THE BLUE</h2>
+        <p>Our oceans are home to creatures larger, stranger, and more mysterious than we can imagine. Covering over 70% of our world, they host complex coral cities, deep oceanic trenches, and migrations that span hemispheres.</p>
+        <a href="#animals" class="btn btn-primary">Discover Marine Giants <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endangered Species Section -->
+  <section id="endangered" class="endangered-section section-padding">
+    <div class="endangered-parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-tagline">Wildlife at Risk</span>
+        <h2 class="section-title">Protect What Cannot Speak</h2>
+        <p class="section-subtitle">Faced with industrialization, climate shift, and habitat fragmentation, these majestic species are on the edge of extinction.</p>
+      </div>
+
+      <div class="endangered-grid">
+        <!-- 4 Major Endangered Species Highlights -->
+        <div class="endangered-card reveal">
+          <div class="endangered-card-img" style="background-image: url('https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80');">
+            <span class="threat-tag">Endangered</span>
+          </div>
+          <div class="endangered-card-content">
+            <h3>Bengal Tiger</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">Solitary forest kings suffering from severe habitat fragmentation.</p>
+            <ul class="endangered-details-list">
+              <li>Population: <span>~3,900 left in wild</span></li>
+              <li>Main Threat: <span>Poaching & Forest Clearing</span></li>
+            </ul>
+            <button class="btn-endangered-card" onclick="openAnimalModal('bengal-tiger')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="endangered-card reveal delay-1">
+          <div class="endangered-card-img" style="background-image: url('https://assets.worldwildlife.org/www-prd/images/Medium_WW1465555_nmY.cd1bf496.fill-1920x768.format-webp.webp');">
+            <span class="threat-tag" style="background: #c0392b;">Critically Endangered</span>
+          </div>
+          <div class="endangered-card-content">
+            <h3>Mountain Gorilla</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">Gentle giants residing in dense, isolated volcanic forests.</p>
+            <ul class="endangered-details-list">
+              <li>Population: <span>~1,000 left in wild</span></li>
+              <li>Main Threat: <span>Habitat degradation & Diseases</span></li>
+            </ul>
+            <button class="btn-endangered-card" onclick="openAnimalModal('gorilla')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="endangered-card reveal delay-2">
+          <div class="endangered-card-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHCy5u3tzbPlwEe0CvhRKD0C8iWDH16eW2pO98G7-5w3OaWiKkBoN3yCs&s=10');">
+            <span class="threat-tag">Endangered</span>
+          </div>
+          <div class="endangered-card-content">
+            <h3>Blue Whale</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">The largest creatures ever known to live on Earth, highly sensitive to ocean change.</p>
+            <ul class="endangered-details-list">
+              <li>Population: <span>~10,000 - 25,000 left</span></li>
+              <li>Main Threat: <span>Ship strikes & Ocean pollution</span></li>
+            </ul>
+            <button class="btn-endangered-card" onclick="openAnimalModal('blue-whale')">Learn More</button>
+          </div>
+        </div>
+
+        <div class="endangered-card reveal delay-3">
+          <div class="endangered-card-img" style="background-image: url('https://npr.brightspotcdn.com/dims4/default/f08853f/2147483647/strip/true/crop/5568x3712+0+0/resize/1760x1174!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F27%2F9b%2Fad4623f347b2a631496e30bf7e4f%2F2023-05-10-sundara-red-panda-kyleshepherd-27.jpg');">
+            <span class="threat-tag">Endangered</span>
+          </div>
+          <div class="endangered-card-content">
+            <h3>Red Panda</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">Small Himalayan arboreal mammals struggling as bamboo woods vanish.</p>
+            <ul class="endangered-details-list">
+              <li>Population: <span>&lt;10,000 in wild</span></li>
+              <li>Main Threat: <span>Deforestation & Trapping</span></li>
+            </ul>
+            <button class="btn-endangered-card" onclick="openAnimalModal('red-panda')">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Box CTA -->
+      <div class="endangered-cta-box glass-panel reveal">
+        <h3>PROTECT WHAT CANNOT SPEAK FOR ITSELF</h3>
+        <p>Every species plays a vital, interconnected role in the food web. When one is removed, the delicate balance of the entire ecosystem collapses.</p>
+        <button class="btn btn-primary" id="ctaBtnHelp">LEARN HOW TO HELP</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Wildlife Facts Section -->
+  <section class="facts-section section-padding">
+    <div class="container">
+      <div class="facts-card glass-panel reveal">
+        <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+        <h2>Did You Know?</h2>
+        <div class="fact-text-container">
+          <p class="fact-content" id="factContent">The blue whale is the largest animal known to have ever lived.</p>
+        </div>
+        <button class="btn-next-fact" id="nextFactBtn">Next Fact <i class="fa-solid fa-rotate"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wildlife Photo Gallery -->
+  <section id="gallery" class="gallery-section section-padding">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <span class="section-tagline">Ecosystem Gallery</span>
+        <h2 class="section-title">Immersive Gallery</h2>
+        <p class="section-subtitle">Vibrant close-ups, sweeping views, and moments captured in nature reserves around the globe.</p>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-masonry reveal delay-1">
+        
+        <div class="gallery-photo-item">
+          <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80" alt="African Lion Close-up Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>African Lion</h4>
+            <span>Savanna Reserve</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80" alt="Bengal Tiger Walking Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>Bengal Tiger</h4>
+            <span>Grassland Wilderness</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=600&q=80" alt="African Elephant Grazing Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>African Elephant</h4>
+            <span>Savanna Herd Land</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://neprimateconservancy.org/wp-content/uploads/2026/04/Eastern-lowland-gorilla-shutterstock_2624976715-r-768x768.jpg" alt="Gorilla Silverback Portrait Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>Gorilla</h4>
+            <span>Rainforest Canopy</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?auto=format&fit=crop&w=600&q=80" alt="Polar Bear on Arctic Ice Sheet Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>Polar Bear</h4>
+            <span>Arctic Ice Fields</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsjOpJ6lexnGJbtCXq_fZIZ_TmCe0lxY6tEYU0lNUZ8g&s=10" alt="Gray Wolf howling in winter snow Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>Gray Wolf</h4>
+            <span>Tundra Woodlands</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://assets.worldwildlife.org/www-prd/images/Medium_WW1172346.2e16d0ba.fill-600x600.format-webp.webp" alt="Blue Whale breathing water mist Wildlife Photography">
+          <div class="gallery-photo-overlay">
+            <h4>Blue Whale</h4>
+            <span>Deep Ocean Channels</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://plus.unsplash.com/premium_photo-1664304362237-8040f0ecac98?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hlZXRhfGVufDB8fDB8fHww" alt="Cheetah running speed wildlife photography">
+          <div class="gallery-photo-overlay">
+            <h4>Cheetah</h4>
+            <span>Savanna Plains</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=600&q=80" alt="Giraffe tall acacia feeding wildlife photography">
+          <div class="gallery-photo-overlay">
+            <h4>Giraffe</h4>
+            <span>savanna Reserve</span>
+          </div>
+        </div>
+
+        <div class="gallery-photo-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjH0f1yxzrR7ExzcCosvN-k8T2wQCXAwog4eASKtuLRU0Etg2hg0ovYyo&s=10" alt="Giant Panda sitting bamboo eating wildlife photography">
+          <div class="gallery-photo-overlay">
+            <h4>Giant Panda</h4>
+            <span>Bamboo Highland Woods</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wildlife Statistics Section -->
+  <section class="stats-section section-padding" id="statistics">
+    <div class="container">
+      <div class="stats-grid">
+        
+        <div class="stat-card glass-panel reveal">
+          <span class="stat-number" data-target="8.7M+">0</span>
+          <span class="stat-label">Species on Earth</span>
+          <p class="stat-desc">An estimated total variety of eukaryotic organisms living in terrestrial and marine habitats.</p>
+        </div>
+
+        <div class="stat-card glass-panel reveal delay-1">
+          <span class="stat-number" data-target="75%">0%</span>
+          <span class="stat-label">Threatened by Loss</span>
+          <p class="stat-desc">Percentage of vulnerable land species facing extinction due to agricultural deforestation.</p>
+        </div>
+
+        <div class="stat-card glass-panel reveal delay-2">
+          <span class="stat-number" data-target="1,000+">0</span>
+          <span class="stat-label">Protected Areas</span>
+          <p class="stat-desc">Wildlife reserves, national parks, and marine sanctuaries backed by international law.</p>
+        </div>
+
+        <div class="stat-card glass-panel reveal delay-3">
+          <span class="stat-number" data-target="24/7">0</span>
+          <span class="stat-label">Nature Monitoring</span>
+          <p class="stat-desc">nature never stops. Conservation teams track wildlife movements round the clock.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Cinematic Section (CTA) -->
+  <section class="final-cta-section" id="cta-final" aria-label="Call to Action: Protecting Wildlife">
+    <!-- Slow background zoom image -->
+    <div class="final-cta-bg" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="final-cta-overlay"></div>
+    <div class="final-cta-content reveal">
+      <h2>THE WILD NEEDS A VOICE</h2>
+      <p>Every species matters. Every habitat matters. The future of wildlife depends entirely on what we do today. Join us in protecting endangered ecosystems before they vanish forever.</p>
+      <a href="#endangered" class="btn btn-primary">PROTECT THE WILD <i class="fa-solid fa-shield-halved"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-info">
+          <a href="#home" class="logo">
+            <i class="fa-solid fa-compass"></i> WILD<span>EARTH</span>
+          </a>
+          <p>Discover the Wild. Protect the Planet. A luxury interactive documentary website dedicated to showcasing and preserving the beauty of Earth's species.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" aria-label="Follow Wild Earth on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="Follow Wild Earth on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Follow Wild Earth on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#animals">Animals</a></li>
+            <li><a href="#habitats">Habitats</a></li>
+            <li><a href="#endangered">Endangered List</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#gallery">Wildlife Gallery</a></li>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#cta-final">Conservation Partners</a></li>
+            <li><a href="#animals">Search Species</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-newsletter">
+          <h4>Conservation Alerts</h4>
+          <p>Subscribe to receive urgent updates on endangered habitats and actionable conservation campaigns.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email address" aria-label="Email address for alerts newsletter" required>
+            <button type="submit">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wild Earth. All Rights Reserved. Designed for Earth's preservation.</p>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted);">Photography sourced legally from Unsplash under creative commons license.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       MODALS AND FULL-SCREEN LIGHTBOX OVERLAYS
+       ========================================== -->
+
+  <!-- Animal Explorer Detail Modal -->
+  <div class="modal-overlay" id="animalModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-wrapper">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details dialog">&times;</button>
+      
+      <!-- Inside grid scroll area -->
+      <div class="modal-scroll-area">
+        <!-- Rendered dynamically via script.js -->
+      </div>
+      
+      <!-- Bottom Pagination controls -->
+      <div class="modal-nav-controls">
+        <button class="modal-nav-btn prev" id="modalPrevBtn" aria-label="Previous animal"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+        <button class="modal-nav-btn next" id="modalNextBtn" aria-label="Next animal">Next <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Gallery Lightbox Overlay -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Full-screen photo view">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close photo view"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav-btn lightbox-prev" id="lightboxPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-nav-btn lightbox-next" id="lightboxNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+    
+    <div class="lightbox-content-wrapper">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Core Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>

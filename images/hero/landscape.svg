@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="landscapeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18071a" />
+      <stop offset="100%" stop-color="#2d1316" />
+    </linearGradient>
+  </defs>
+  <!-- Rolling hills landscape -->
+  <path d="M0,460 Q280,410 580,470 T1180,440 Q1310,425 1440,465 L1440,600 L0,600 Z" fill="url(#landscapeGrad)" />
+</svg>

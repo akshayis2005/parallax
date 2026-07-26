@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="mountGradBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3d1b3c" />
+      <stop offset="100%" stop-color="#5a2e3a" />
+    </linearGradient>
+    <linearGradient id="mountGradFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#241026" />
+      <stop offset="100%" stop-color="#461e2f" />
+    </linearGradient>
+  </defs>
+  <!-- Back Mountain Range -->
+  <path d="M0,350 L80,280 L220,380 L360,250 L520,390 L680,230 L840,360 L980,210 L1150,370 L1280,260 L1440,390 L1440,600 L0,600 Z" fill="url(#mountGradBack)" opacity="0.7" />
+  <!-- Front Mountain Range -->
+  <path d="M0,400 L140,310 L300,430 L480,290 L650,440 L820,300 L990,420 L1180,310 L1340,410 L1440,350 L1440,600 L0,600 Z" fill="url(#mountGradFront)" />
+</svg>
